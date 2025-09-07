@@ -1,35 +1,43 @@
+"use client";
+
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useEffect, useState } from "react";
+import { getFirestore, collection, getDocs, query, orderBy } from "firebase/firestore";
+import { app } from "@/lib/firebase";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const projects = [
-  {
-    client: "BCL Mine",
-    description: "Installation of Combricks and execution of Profibus network upgrades.",
-    logoHint: "mining company"
-  },
-  {
-    client: "BMC",
-    description: "Successful upgrade of the Adroit SCADA system for improved monitoring and control.",
-    logoHint: "meat processing"
-  },
-  {
-    client: "Discovery Metals",
-    description: "Implemented Modbus & HMI interfacing for streamlined plant operations.",
-    logoHint: "metals logo"
-  },
-  {
-    client: "Debswana",
-    description: "Carried out a critical control system upgrade to enhance production efficiency.",
-    logoHint: "diamond company"
-  },
-  {
-    client: "Water Utilities Corp.",
-    description: "Designed and commissioned a comprehensive telemetry system for remote water management.",
-    logoHint: "water utility"
-  },
-];
+interface Project {
+  id: string;
+  client: string;
+  description: string;
+  logoHint: string;
+}
+
+const db = getFirestore(app);
 
 export function Projects() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const projectsCollection = collection(db, "projects");
+        const q = query(projectsCollection, orderBy("order", "asc"));
+        const projectSnapshot = await getDocs(q);
+        const projectsList = projectSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Project));
+        setProjects(projectsList);
+      } catch (error) {
+        console.error("Error fetching projects from Firestore:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
@@ -44,28 +52,43 @@ export function Projects() {
           </div>
         </div>
         <div className="mx-auto grid grid-cols-1 gap-6 pt-12 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <Card key={project.client} className="overflow-hidden bg-background">
-              <CardHeader className="flex flex-row items-center gap-4 p-4">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-secondary rounded-lg">
-                  <Image
-                    src="https://picsum.photos/100/100?grayscale"
-                    alt={`${project.client} logo`}
-                    width={40}
-                    height={40}
-                    className="object-contain"
-                    data-ai-hint={project.logoHint}
-                  />
-                </div>
-                <CardTitle className="font-headline text-xl">{project.client}</CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 pt-0">
-                <CardDescription className="text-base text-muted-foreground">
-                  {project.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {loading ? (
+            Array.from({ length: 3 }).map((_, index) => (
+              <Card key={index} className="overflow-hidden bg-background">
+                <CardHeader className="flex flex-row items-center gap-4 p-4">
+                  <Skeleton className="w-[50px] h-[50px] rounded-lg" />
+                  <Skeleton className="h-6 w-3/4" />
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-5/6 mt-2" />
+                </CardContent>
+              </Card>
+            ))
+          ) : (
+            projects.map((project) => (
+              <Card key={project.id} className="overflow-hidden bg-background">
+                <CardHeader className="flex flex-row items-center gap-4 p-4">
+                  <div className="w-[50px] h-[50px] flex items-center justify-center bg-secondary rounded-lg">
+                    <Image
+                      src="https://picsum.photos/100/100?grayscale"
+                      alt={`${project.client} logo`}
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                      data-ai-hint={project.logoHint}
+                    />
+                  </div>
+                  <CardTitle className="font-headline text-xl">{project.client}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <CardDescription className="text-base text-muted-foreground">
+                    {project.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))
+          )}
         </div>
       </div>
     </section>
