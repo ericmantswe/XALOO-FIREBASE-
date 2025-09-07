@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Award, Heart, Users, TrendingUp, Briefcase, Smile } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { AnimatedNumber } from "./animated-number";
 
 const trustPoints = [
     {
@@ -23,18 +24,21 @@ const trustPoints = [
 const stats = [
     {
         icon: TrendingUp,
-        value: "14+",
+        value: 14,
         label: "Years of Experience",
+        suffix: "+",
     },
     {
         icon: Briefcase,
-        value: "100+",
+        value: 100,
         label: "Projects Completed",
+        suffix: "+",
     },
     {
         icon: Smile,
-        value: "99%",
+        value: 99,
         label: "Client Satisfaction",
+        suffix: "%",
     },
 ];
 
@@ -72,7 +76,10 @@ export function Trust() {
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center justify-center text-center">
               <stat.icon className="h-12 w-12 text-primary" />
-              <p className="mt-4 text-4xl font-bold tracking-tighter text-primary">{stat.value}</p>
+              <div className="mt-4 text-4xl font-bold tracking-tighter text-primary">
+                <AnimatedNumber value={stat.value} />
+                {stat.suffix}
+              </div>
               <p className="mt-1 text-lg text-muted-foreground">{stat.label}</p>
             </div>
           ))}
