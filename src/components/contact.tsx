@@ -1,3 +1,5 @@
+"use client";
+
 import { MapComponent } from './map';
 import { ContactForm } from './contact-form';
 
