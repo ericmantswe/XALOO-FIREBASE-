@@ -27,7 +27,7 @@ export function About() {
             <Card className="bg-background">
               <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-6">
                 <Image
-                  src="https://picsum.photos/200"
+                  src="https://i.postimg.cc/hGRgC776/Gasemotho.jpg"
                   alt="Gasemotho N. Phalalo, Founder"
                   width={120}
                   height={120}
