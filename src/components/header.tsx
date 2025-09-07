@@ -49,7 +49,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden md:block">
-            <Button asChild>
+            <Button asChild className="animated-gradient-button">
               <Link href="#contact">Contact Us</Link>
             </Button>
           </div>
