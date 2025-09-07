@@ -17,8 +17,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2" prefetch={false}>
-              <Image src="https://i.postimg.cc/CKX2vC8V/xaloo.jpg" alt="Xaloo Technologies Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Xaloo Technologies</span>
+              <Image src="https://i.postimg.cc/CKX2vC8V/xaloo.jpg" alt="Xaloo Technologies Logo" width={40} height={40} className="h-10 w-10" />
             </Link>
             <p className="text-sm text-muted-foreground">
               Your partner in smart industrial automation and control engineering.
