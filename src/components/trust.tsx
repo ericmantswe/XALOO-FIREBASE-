@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Award, Heart, Users } from "lucide-react";
+import { Award, Heart, Users, TrendingUp, Briefcase, Smile } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const trustPoints = [
@@ -17,6 +17,24 @@ const trustPoints = [
         icon: Heart,
         title: "Reliable & Trusted",
         description: "Committed to providing dependable systems and building lasting partnerships.",
+    },
+];
+
+const stats = [
+    {
+        icon: TrendingUp,
+        value: "14+",
+        label: "Years of Experience",
+    },
+    {
+        icon: Briefcase,
+        value: "200+",
+        label: "Projects Completed",
+    },
+    {
+        icon: Smile,
+        value: "99%",
+        label: "Client Satisfaction",
     },
 ];
 
@@ -57,6 +75,17 @@ export function Trust() {
                 </Card>
             ))}
         </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center justify-center text-center">
+              <stat.icon className="h-12 w-12 text-primary" />
+              <p className="mt-4 text-4xl font-bold tracking-tighter text-primary">{stat.value}</p>
+              <p className="mt-1 text-lg text-muted-foreground">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl font-headline text-primary">
             Our Satisfied Clients
