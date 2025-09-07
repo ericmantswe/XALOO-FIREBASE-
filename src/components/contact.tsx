@@ -51,7 +51,7 @@ export function Contact() {
               </div>
             ))}
           </div>
-          <div className="overflow-hidden rounded-lg shadow-lg">
+          <div className="overflow-hidden rounded-lg border-2 border-primary/20 shadow-lg">
             <MapComponent />
           </div>
         </div>

@@ -11,7 +11,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t">
+    <footer className="bg-background border-t border-white/10">
       <div className="container mx-auto px-4 py-8 md:px-6">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-4">
@@ -24,7 +24,7 @@ export function Footer() {
             </p>
           </div>
           <div className="space-y-4">
-            <h4 className="font-semibold">Quick Links</h4>
+            <h4 className="font-semibold text-primary">Quick Links</h4>
             <nav className="grid grid-cols-2 gap-2">
               {quickLinks.map((link) => (
                 <Link
@@ -39,7 +39,7 @@ export function Footer() {
             </nav>
           </div>
           <div className="space-y-4">
-            <h4 className="font-semibold">Connect With Us</h4>
+            <h4 className="font-semibold text-primary">Connect With Us</h4>
             <div className="flex items-center gap-4">
               <Link href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary" prefetch={false}>
                 <Linkedin className="h-6 w-6" />
@@ -50,7 +50,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t border-white/10 pt-6 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Xaloo Technologies. All rights reserved.</p>
         </div>
       </div>

@@ -43,7 +43,7 @@ const services: Service[] = [
 
 export function Services() {
   return (
-    <section id="services" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -57,14 +57,14 @@ export function Services() {
         </div>
         <div className="mx-auto grid grid-cols-1 gap-6 pt-12 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col text-center items-center p-6 hover:shadow-lg transition-shadow duration-300 hover:-translate-y-2">
+            <Card key={service.title} className="flex flex-col text-center items-center p-6 bg-background/50 hover:bg-background/80 transition-colors duration-300 hover:-translate-y-2">
               <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
                 <service.icon className="h-10 w-10" />
               </div>
               <CardHeader className="p-0">
                 <CardTitle className="font-headline">{service.title}</CardTitle>
               </CardHeader>
-              <CardDescription className="mt-2 text-base">
+              <CardDescription className="mt-2 text-base text-muted-foreground">
                 {service.description}
               </CardDescription>
             </Card>

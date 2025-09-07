@@ -26,7 +26,7 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
         isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent"
       }`}
     >
@@ -47,47 +47,49 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-           <Button asChild variant="outline">
-            <Link href="#contact">Contact Us</Link>
-          </Button>
-        </div>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle navigation menu</span>
+        <div className="flex items-center gap-4">
+          <div className="hidden md:block">
+            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Link href="#contact">Contact Us</Link>
             </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <div className="flex h-full flex-col justify-between p-6">
-                <div className="grid gap-6">
-                    <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                        <BotMessageSquare className="h-6 w-6 text-primary" />
-                        <span className="text-lg font-bold">Xaloo Tech</span>
-                    </Link>
-                    <nav className="grid gap-4">
-                        {navLinks.map((link) => (
-                        <SheetClose asChild key={link.href}>
-                            <Link
-                            href={link.href}
-                            className="text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
-                            prefetch={false}
-                            >
-                            {link.label}
-                            </Link>
-                        </SheetClose>
-                        ))}
-                    </nav>
-                </div>
-                 <SheetClose asChild>
-                    <Button asChild>
-                        <Link href="#contact">Contact Us</Link>
-                    </Button>
-                </SheetClose>
-            </div>
-          </SheetContent>
-        </Sheet>
+          </div>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-background">
+              <div className="flex h-full flex-col justify-between p-6">
+                  <div className="grid gap-6">
+                      <Link href="/" className="flex items-center gap-2" prefetch={false}>
+                          <BotMessageSquare className="h-6 w-6 text-primary" />
+                          <span className="text-lg font-bold">Xaloo Tech</span>
+                      </Link>
+                      <nav className="grid gap-4">
+                          {navLinks.map((link) => (
+                          <SheetClose asChild key={link.href}>
+                              <Link
+                              href={link.href}
+                              className="text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
+                              prefetch={false}
+                              >
+                              {link.label}
+                              </Link>
+                          </SheetClose>
+                          ))}
+                      </nav>
+                  </div>
+                  <SheetClose asChild>
+                      <Button asChild>
+                          <Link href="#contact">Contact Us</Link>
+                      </Button>
+                  </SheetClose>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

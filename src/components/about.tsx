@@ -12,7 +12,7 @@ const industries = [
 
 export function About() {
   return (
-    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-6">
@@ -24,7 +24,7 @@ export function About() {
                 Founded in 2010, Xaloo Technologies has grown to be a trusted partner in industrial automation. We specialize in PLCs, SCADA systems, variable speed drives, process instruments, and robust industrial communications.
               </p>
             </div>
-            <Card>
+            <Card className="bg-secondary">
               <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-6">
                 <Image
                   src="https://picsum.photos/200"
@@ -37,7 +37,7 @@ export function About() {
                 <div className="space-y-2 text-center sm:text-left">
                   <h3 className="text-xl font-bold">Gasemotho N. Phalalo</h3>
                   <p className="text-muted-foreground font-medium">Founder & Certified Profibus Engineer</p>
-                  <p className="text-sm">
+                  <p className="text-sm text-foreground/80">
                     With over 10 years of hands-on experience, Gasemotho leads our team with a commitment to excellence and innovation in every project.
                   </p>
                 </div>
