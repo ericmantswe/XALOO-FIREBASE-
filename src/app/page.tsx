@@ -8,6 +8,7 @@ import { Services } from '@/components/services';
 import { VisionMission } from '@/components/vision-mission';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { Trust } from '@/components/trust';
+import { Testimonials } from '@/components/testimonials';
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
         </AnimateOnScroll>
         <AnimateOnScroll>
           <Trust />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <Testimonials />
         </AnimateOnScroll>
         <AnimateOnScroll>
           <Projects />
