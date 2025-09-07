@@ -2,10 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import Image from "next/image";
+import { MobileMenu } from "./mobile-menu";
 
 const navLinks = [
   { href: "#about", label: "About Us" },
@@ -53,42 +52,7 @@ export function Header() {
               <Link href="#contact">Contact Us</Link>
             </Button>
           </div>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" className="md:hidden">
-                <Sparkles className="h-6 w-6 animate-pulse text-primary" />
-                <span className="ml-2">Menu</span>
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-background">
-              <div className="flex h-full flex-col justify-between p-6">
-                  <div className="grid gap-6">
-                      <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                          <Image src="https://i.postimg.cc/nLKkm6Jg/xaloo.png" alt="Xaloo Technologies Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
-                      </Link>
-                      <nav className="grid gap-4">
-                          {navLinks.map((link) => (
-                          <SheetClose asChild key={link.href}>
-                              <Link
-                              href={link.href}
-                              className="text-lg font-medium text-muted-foreground transition-colors hover:text-primary"
-                              prefetch={false}
-                              >
-                              {link.label}
-                              </Link>
-                          </SheetClose>
-                          ))}
-                      </nav>
-                  </div>
-                  <SheetClose asChild>
-                      <Button asChild>
-                          <Link href="#contact">Contact Us</Link>
-                      </Button>
-                  </SheetClose>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <MobileMenu navLinks={navLinks} />
         </div>
       </div>
     </header>
