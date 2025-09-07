@@ -49,7 +49,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
           <div className="hidden md:block">
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button asChild>
               <Link href="#contact">Contact Us</Link>
             </Button>
           </div>

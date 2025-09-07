@@ -31,7 +31,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -45,9 +45,9 @@ export function Projects() {
         </div>
         <div className="mx-auto grid grid-cols-1 gap-6 pt-12 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <Card key={project.client} className="overflow-hidden bg-secondary">
-              <CardHeader className="flex flex-row items-center gap-4 bg-background/20 p-4">
-                <div className="w-[50px] h-[50px] flex items-center justify-center bg-muted rounded-lg">
+            <Card key={project.client} className="overflow-hidden bg-background">
+              <CardHeader className="flex flex-row items-center gap-4 p-4">
+                <div className="w-[50px] h-[50px] flex items-center justify-center bg-secondary rounded-lg">
                   <Image
                     src="https://picsum.photos/100/100?grayscale"
                     alt={`${project.client} logo`}
@@ -59,7 +59,7 @@ export function Projects() {
                 </div>
                 <CardTitle className="font-headline text-xl">{project.client}</CardTitle>
               </CardHeader>
-              <CardContent className="p-4">
+              <CardContent className="p-4 pt-0">
                 <CardDescription className="text-base text-muted-foreground">
                   {project.description}
                 </CardDescription>

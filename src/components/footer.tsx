@@ -11,7 +11,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-white/10">
+    <footer className="bg-secondary border-t">
       <div className="container mx-auto px-4 py-8 md:px-6">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-4">
@@ -50,7 +50,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-white/10 pt-6 text-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Xaloo Technologies. All rights reserved.</p>
         </div>
       </div>
