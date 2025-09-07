@@ -30,7 +30,7 @@ export function Hero() {
             <Button asChild size="lg">
               <Link href="#services">Explore Our Services</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="text-black border-black bg-white hover:bg-primary hover:text-white hover:border-primary">
               <Link href="#contact">Contact Us</Link>
             </Button>
           </div>
