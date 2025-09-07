@@ -38,14 +38,6 @@ const stats = [
     },
 ];
 
-const clients = [
-  { name: "BCL Mine", logoHint: "mining company logo" },
-  { name: "BMC", logoHint: "meat processing logo" },
-  { name: "Discovery Metals", logoHint: "metals company logo" },
-  { name: "Debswana", logoHint: "diamond company logo" },
-  { name: "Water Utilities Corp.", logoHint: "water utility logo" },
-];
-
 export function Trust() {
   return (
     <section id="why-trust-us" className="w-full py-12 md:py-24 lg:py-32 bg-background">
@@ -84,27 +76,6 @@ export function Trust() {
               <p className="mt-1 text-lg text-muted-foreground">{stat.label}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl font-headline text-primary">
-            Our Satisfied Clients
-          </h3>
-          <div className="mt-8 flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {clients.map((client) => (
-              <div key={client.name} className="flex flex-col items-center gap-2">
-                <Image
-                  src="https://picsum.photos/150/80?grayscale"
-                  alt={`${client.name} Logo`}
-                  width={120}
-                  height={60}
-                  className="object-contain"
-                  data-ai-hint={client.logoHint}
-                />
-                <span className="text-sm font-medium text-muted-foreground">{client.name}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
