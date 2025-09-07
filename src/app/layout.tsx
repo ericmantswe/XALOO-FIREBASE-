@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     description: 'Delivering reliable automation, control systems, and industrial communication solutions.',
     images: ['https://i.postimg.cc/nLKkm6Jg/xaloo.png'], // A link to your logo or a featured image
   },
+  icon: {
+    icon: 'https://i.postimg.cc/nLKkm6Jg/xaloo.png',
+    type: 'image/png',
+  },
 };
 
 export default function RootLayout({
