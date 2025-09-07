@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BotMessageSquare, Linkedin, Facebook } from "lucide-react";
+import { Linkedin, Facebook } from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
   { href: "#", label: "Home" },
@@ -16,7 +17,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2" prefetch={false}>
-              <BotMessageSquare className="h-8 w-8 text-primary" />
+              <Image src="/xaloo.jpg" alt="Xaloo Technologies Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Xaloo Technologies</span>
             </Link>
             <p className="text-sm text-muted-foreground">

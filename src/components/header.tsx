@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X, BotMessageSquare } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#about", label: "About Us" },
@@ -32,7 +33,7 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <BotMessageSquare className="h-8 w-8 text-primary" />
+          <Image src="/xaloo.jpg" alt="Xaloo Technologies Logo" width={32} height={32} className="h-8 w-8" />
           <span className="text-xl font-bold text-foreground">Xaloo Technologies</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
@@ -64,7 +65,7 @@ export function Header() {
               <div className="flex h-full flex-col justify-between p-6">
                   <div className="grid gap-6">
                       <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                          <BotMessageSquare className="h-6 w-6 text-primary" />
+                          <Image src="/xaloo.jpg" alt="Xaloo Technologies Logo" width={24} height={24} className="h-6 w-6" />
                           <span className="text-lg font-bold">Xaloo Tech</span>
                       </Link>
                       <nav className="grid gap-4">
