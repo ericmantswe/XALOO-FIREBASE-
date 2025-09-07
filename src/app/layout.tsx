@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'Xaloo Technologies',
     images: [
       {
-        url: 'https://i.postimg.cc/CKX2vC8V/xaloo.jpg', // A link to your logo or a featured image
+        url: 'https://i.postimg.cc/nLKkm6Jg/xaloo.png', // A link to your logo or a featured image
         width: 800,
         height: 600,
         alt: 'Xaloo Technologies Logo',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Xaloo Technologies | Industrial Automation & Control Engineering',
     description: 'Delivering reliable automation, control systems, and industrial communication solutions.',
-    images: ['https://i.postimg.cc/CKX2vC8V/xaloo.jpg'], // A link to your logo or a featured image
+    images: ['https://i.postimg.cc/nLKkm6Jg/xaloo.png'], // A link to your logo or a featured image
   },
 };
 
