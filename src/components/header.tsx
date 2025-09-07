@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { MobileMenu } from "./mobile-menu";
+import { ClientOnly } from "./client-only";
 
 const navLinks = [
   { href: "#about", label: "About Us" },
@@ -52,7 +53,9 @@ export function Header() {
               <Link href="#contact">Contact Us</Link>
             </Button>
           </div>
-          <MobileMenu navLinks={navLinks} />
+          <ClientOnly>
+            <MobileMenu navLinks={navLinks} />
+          </ClientOnly>
         </div>
       </div>
     </header>
