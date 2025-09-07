@@ -28,7 +28,7 @@ const stats = [
     },
     {
         icon: Briefcase,
-        value: "100",
+        value: "100+",
         label: "Projects Completed",
     },
     {
