@@ -57,7 +57,7 @@ export function Services() {
         </div>
         <div className="mx-auto grid grid-cols-1 gap-6 pt-12 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Card key={service.title} className="flex flex-col text-center items-center p-6 bg-secondary/50 border-2 border-transparent hover:border-primary transition-colors duration-300 hover:-translate-y-2">
+            <Card key={service.title} className="flex flex-col text-center items-center p-6 bg-secondary border-2 border-transparent hover:border-primary transition-colors duration-300 hover:-translate-y-2 shadow-lg">
               <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
                 <service.icon className="h-10 w-10" />
               </div>

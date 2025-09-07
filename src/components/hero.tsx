@@ -16,7 +16,7 @@ export function Hero() {
           className="object-cover"
           data-ai-hint="industrial automation"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto space-y-6">
@@ -27,7 +27,7 @@ export function Hero() {
             Delivering reliable automation, control systems, and industrial communication solutions for over a decade.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button asChild size="lg">
               <Link href="#services">Explore Our Services</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">

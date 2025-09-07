@@ -24,7 +24,7 @@ export function About() {
                 Founded in 2010, Xaloo Technologies has grown to be a trusted partner in industrial automation. We specialize in PLCs, SCADA systems, variable speed drives, process instruments, and robust industrial communications.
               </p>
             </div>
-            <Card>
+            <Card className="bg-background">
               <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-6">
                 <Image
                   src="https://picsum.photos/200"
