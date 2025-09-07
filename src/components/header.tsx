@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import Image from "next/image";
@@ -55,8 +55,9 @@ export function Header() {
           </div>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Sparkles className="h-6 w-6 animate-pulse text-primary" />
+              <Button variant="ghost" className="md:hidden">
+                <Menu className="h-6 w-6" />
+                <span className="ml-2">Menu</span>
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
