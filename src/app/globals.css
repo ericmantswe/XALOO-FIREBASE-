@@ -92,7 +92,7 @@
 
 @layer components {
   .animated-gradient-button {
-    @apply bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-[length:200%_auto] text-white;
+    @apply bg-gradient-to-r from-red-600 via-red-700 to-orange-500 bg-[length:200%_auto] text-white;
     @apply animate-gradient-x;
   }
 }
