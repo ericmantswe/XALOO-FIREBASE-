@@ -16,21 +16,21 @@ export function Hero() {
           className="object-cover"
           data-ai-hint="industrial automation"
         />
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl font-headline text-primary">
+          <h1 className="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl font-headline text-primary-foreground">
             Transforming Industries with Smart Automation Solutions
           </h1>
-          <p className="text-lg text-muted-foreground md:text-xl">
+          <p className="text-lg text-primary-foreground/80 md:text-xl">
             Delivering reliable automation, control systems, and industrial communication solutions for over a decade.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="#services">Explore Our Services</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
               <Link href="#contact">Contact Us</Link>
             </Button>
           </div>
