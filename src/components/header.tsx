@@ -33,7 +33,7 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Image src="https://i.postimg.cc/CKX2vC8V/xaloo.jpg" alt="Xaloo Technologies Logo" width={40} height={40} className="h-10 w-10" />
+          <Image src="https://i.postimg.cc/CKX2vC8V/xaloo.jpg" alt="Xaloo Technologies Logo" width={60} height={60} className="h-14 w-14 rounded-full" />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -64,7 +64,7 @@ export function Header() {
               <div className="flex h-full flex-col justify-between p-6">
                   <div className="grid gap-6">
                       <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                          <Image src="https://i.postimg.cc/CKX2vC8V/xaloo.jpg" alt="Xaloo Technologies Logo" width={32} height={32} className="h-8 w-8" />
+                          <Image src="https://i.postimg.cc/CKX2vC8V/xaloo.jpg" alt="Xaloo Technologies Logo" width={40} height={40} className="h-10 w-10 rounded-full" />
                       </Link>
                       <nav className="grid gap-4">
                           {navLinks.map((link) => (
