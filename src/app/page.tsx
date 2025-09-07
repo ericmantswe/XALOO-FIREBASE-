@@ -6,6 +6,7 @@ import { Hero } from '@/components/hero';
 import { Projects } from '@/components/projects';
 import { Services } from '@/components/services';
 import { VisionMission } from '@/components/vision-mission';
+import { AnimateOnScroll } from '@/components/animate-on-scroll';
 
 export default function Home() {
   return (
@@ -13,11 +14,21 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <VisionMission />
-        <Contact />
+        <AnimateOnScroll>
+          <About />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <Services />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <Projects />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <VisionMission />
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <Contact />
+        </AnimateOnScroll>
       </main>
       <Footer />
     </div>
