@@ -34,7 +34,9 @@ export default function Home() {
         <AnimateOnScroll>
           <VisionMission />
         </AnimateOnScroll>
-        <Contact />
+        <AnimateOnScroll>
+          <Contact />
+        </AnimateOnScroll>
       </main>
       <Footer />
     </div>
