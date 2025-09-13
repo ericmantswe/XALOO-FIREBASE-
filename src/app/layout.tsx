@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { Space_Grotesk } from 'next/font/google';
+import Script from 'next/script';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -50,6 +51,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js" />
+      </head>
       <body className={`${spaceGrotesk.variable} font-body antialiased`}>
         {children}
         <Toaster />
