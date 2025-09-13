@@ -10,6 +10,7 @@ import { AnimateOnScroll } from '@/components/animate-on-scroll';
 import { Trust } from '@/components/trust';
 import { Testimonials } from '@/components/testimonials';
 import { ClientOnly } from '@/components/client-only';
+import { SplineModel } from '@/components/spline-model';
 
 export default function Home() {
   return (
@@ -40,6 +41,9 @@ export default function Home() {
         <ClientOnly>
           <Contact />
         </ClientOnly>
+        <AnimateOnScroll>
+           <SplineModel />
+        </AnimateOnScroll>
       </main>
       <Footer />
     </div>

@@ -2,21 +2,20 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-// Since spline-viewer is a custom element, we need to declare its type for TypeScript
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'spline-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & { url: string; }, HTMLElement>;
-    }
-  }
-}
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative h-dvh min-h-[600px] w-full flex items-center justify-center text-center">
       <div className="absolute inset-0 z-0">
-        <spline-viewer url="https://prod.spline.design/CGTOHKA0m4IbK6xs/scene.splinecode"></spline-viewer>
+        <Image
+            src="https://picsum.photos/seed/hero/1920/1080"
+            alt="Industrial Automation"
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint="industrial automation"
+        />
         <div className="absolute inset-0 bg-black/70" />
       </div>
       <div className="relative z-10 container mx-auto px-4 md:px-6">
