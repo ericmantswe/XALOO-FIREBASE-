@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs, query, orderBy } from "firebase/firestore";
-import { app } from "@/lib/firebase";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface Project {
@@ -13,8 +13,6 @@ interface Project {
   description: string;
   logoHint: string;
 }
-
-const db = getFirestore(app);
 
 export function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
