@@ -39,6 +39,12 @@ const nextConfig: NextConfig = {
         hostname: 'flash-clover-470919-u6.appspot.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'flash-clover-470919-u6.firebasestorage.app',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
